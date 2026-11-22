@@ -6,7 +6,7 @@
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#f4f6f8;color:#1f2933}
 header{position:sticky;top:0;background:#0f766e;color:#fff;padding:12px 14px;z-index:2}
-h1{margin:0 0 8px;font-size:18px}#q{width:100%;padding:10px 12px;border:0;border-radius:8px;font-size:16px}
+h1{margin:0;font-size:18px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.pdf{background:#fff;color:#0f766e;text-decoration:none;font-weight:700;font-size:13px;padding:6px 12px;border-radius:16px}#q{width:100%;padding:10px 12px;border:0;border-radius:8px;font-size:16px}
 #count{font-size:13px;opacity:.85;margin-top:6px}
 table{width:100%;border-collapse:collapse;background:#fff}
 th,td{padding:10px 12px;border-bottom:1px solid #e4e7eb;text-align:left;vertical-align:middle}
@@ -17,7 +17,7 @@ td.ph-col{width:1%;white-space:nowrap}td.no{width:42px;color:#7b8794;font-size:1
 .call{display:inline-flex;align-items:center;gap:6px;background:#16a34a;color:#fff;text-decoration:none;padding:7px 14px;border-radius:20px;font-size:14px;font-weight:600}
 .call:active{background:#15803d}.none{color:#9aa5b1;font-size:13px}
 </style></head><body>
-<header><h1>PMWA Contacts</h1><input id="q" type="search" placeholder="Search name or number" autocomplete="off"><div id="count"></div></header>
+<header><div class="top"><h1>PMWA Contacts</h1><a class="pdf" href="PMWA-Contacts.pdf" download>&#11015; PDF</a></div><input id="q" type="search" placeholder="Search name or number" autocomplete="off"><div id="count"></div></header>
 <table><thead><tr><th>#</th><th>Name</th><th>Mobile</th></tr></thead><tbody id="list"></tbody></table>
 <script>
 const DATA=__DATA__;

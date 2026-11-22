@@ -1,0 +1,3 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage();
+await p.goto('file:///tmp/claude-1000/-home-asha-projects/b0e4db08-7e33-4325-949a-68309af627a7/scratchpad/print.html');
+await p.pdf({path:'/home/asha/projects/contacts/PMWA-Contacts.pdf',format:'A4',printBackground:true,displayHeaderFooter:true,headerTemplate:'<span></span>',footerTemplate:'<div style="font-size:8px;width:100%;text-align:center;color:#888">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',margin:{top:'14mm',bottom:'16mm',left:'12mm',right:'12mm'}});await b.close()})();
