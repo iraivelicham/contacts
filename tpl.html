@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>PMWA Contacts</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#f4f6f8;color:#1f2933}
+header{position:sticky;top:0;background:#0f766e;color:#fff;padding:12px 14px;z-index:2}
+h1{margin:0 0 8px;font-size:18px}#q{width:100%;padding:10px 12px;border:0;border-radius:8px;font-size:16px}
+#count{font-size:13px;opacity:.85;margin-top:6px}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{padding:10px 12px;border-bottom:1px solid #e4e7eb;text-align:left;vertical-align:middle}
+th{background:#eef2f4;font-size:13px;color:#52606d;position:sticky;top:104px}
+td.no{width:42px;color:#7b8794;font-size:13px}td.name{font-weight:600}
+.ph{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:4px 0}.ph span{white-space:nowrap}
+@media(max-width:480px){th,td{padding:9px 8px}td.no,th:first-child{display:none}.ph{flex-direction:column;align-items:flex-start}}
+.call{display:inline-flex;align-items:center;gap:6px;background:#16a34a;color:#fff;text-decoration:none;padding:7px 14px;border-radius:20px;font-size:14px;font-weight:600}
+.call:active{background:#15803d}.none{color:#9aa5b1;font-size:13px}
+</style></head><body>
+<header><h1>PMWA Contacts</h1><input id="q" type="search" placeholder="Search name or number" autocomplete="off"><div id="count"></div></header>
+<table><thead><tr><th>#</th><th>Name</th><th>Mobile</th></tr></thead><tbody id="list"></tbody></table>
+<script>
+const DATA=__DATA__;
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tel=p=>{let d=p.replace(/[^\d+]/g,'');if(/^\d{10}$/.test(d))d='+91'+d;return d};
+function render(){const q=document.getElementById('q').value.trim().toLowerCase(),qd=q.replace(/\D/g,'');
+let n=0,h='';DATA.forEach(c=>{if(q&&!c.n.toLowerCase().includes(q)&&!(qd&&c.p.some(p=>p.replace(/\D/g,'').includes(qd))))return;n++;
+h+='<tr><td class="no">'+n+'</td><td class="name">'+esc(c.n)+'</td><td>'+(c.p.length?c.p.map(p=>'<div class="ph"><span>'+esc(p)+'</span><a class="call" href="tel:'+tel(p)+'">&#128222; Call</a></div>').join(''):'<span class="none">No number</span>')+'</td></tr>'});
+document.getElementById('list').innerHTML=h;document.getElementById('count').textContent=n+' of '+DATA.length+' contacts'}
+document.getElementById('q').addEventListener('input',render);render();
+</script></body></html>
