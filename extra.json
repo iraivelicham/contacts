@@ -1,0 +1,22 @@
+{
+  "_source": "Downloads/PMWA List.pdf (140 rows, 2026-11-25). fill = existing contact without phone gets the PDF number; add = new contact. Names verbatim from the PDF (Title Case).",
+  "fill": [
+    ["Ameenur Rahman - Adovocate", "9840021593"],
+    ["B.Sulthan Mohammed", "8220894023"],
+    ["Shaik Oil Company", "8807051237"],
+    ["Abdul Wahid", "9962801906"],
+    ["Jamal Ansari", "9444158519"],
+    ["Irshad Ahmed", "9884995670"],
+    ["Mohammed Ibrahim", "9444014999"],
+    ["Chudidhar Park", "044 48688573"],
+    ["Madharsha Garden", "044 26426388"]
+  ],
+  "add": [
+    ["Alpha (Infra)", "9840154743"],
+    ["Imthiyas Ahmed", "9840049911"],
+    ["Muzzakir - Bangalore", "7358233455"],
+    ["Jawahir Husain (Thambi)", "7448390751"],
+    ["Nather Ahamed", "9840128133"],
+    ["Imthiyas Ahmed", "7010026844"]
+  ]
+}
